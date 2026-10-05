@@ -1,0 +1,25 @@
+services:
+
+  api-gateway:
+    command: node --watch --inspect=0.0.0.0:9229 src/server.js
+    ports:
+      - "8080:8080"
+      - "9229:9229"
+    volumes:
+      - ./api-gateway/src:/app/src
+
+  product-service:
+    command: node --watch --inspect=0.0.0.0:9229 src/server.js
+    ports:
+      - "3001:3001"
+      - "9230:9229"
+    volumes:
+      - ./product-service/src:/app/src
+
+  order-service:
+    command: node --watch --inspect=0.0.0.0:9229 src/server.js
+    ports:
+      - "3002:3002"
+      - "9231:9229"
+    volumes:
+      - ./order-service/src:/app/src

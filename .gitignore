@@ -1,0 +1,13 @@
+# Environment variables / secrets
+.env
+.env.*
+
+# Node.js dependencies
+node_modules/
+
+# Logs
+npm-debug.log*
+*.log
+
+# Terraform / other local tooling if applicable
+.terraform/
