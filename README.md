@@ -3,7 +3,7 @@
 A containerized e-commerce application built using a microservices architecture. The platform consists of an API Gateway, Product Service, and Order Service, with PostgreSQL used for persistent data storage and Redis used for caching.
 
 ### Architecture
-
+![image](images/arch.png)
 The application consists of three Node.js microservices:
 
 - **API Gateway** – external entry point for client requests.
@@ -35,18 +35,34 @@ Compose requirements:
 ### Results
 Below is an highlight of results indicating the successful configuration of the project
 
-#### Building Container Image
+#### Container Image Build
 
+Building one of the images
+
+![image](images/dockerbuild.png)
 
 #### List of Images
 
+List of images with relevant tags 
+
+![image](images/dockerimages.png)
 
 #### Container Images Running
 
+The five containers running 3 node.js application with postgres and redis
+![image](images/conrun.png)
 
 #### Testing the application
 
-#### Pushing the Images to DockerHub
+*curl http://localhost:8080/health*
+*curl http://localhost:8080/products
+curl http://localhost:8080/orders*
+ 
+![image](images/test.png)
 
+#### Images pushed  to repos in DockerHub
+
+![image](images/dockerhubimages.png)
 
 ### Conclusion
+This project demonstrated how to containerize and deploy a microservices-based e-commerce application using Docker and Docker Compose. Beyond that, it provided hands-on experience applying container security principles to a microservices application. I implemented non-root containers, multi-stage builds, service isolation through a dedicated Docker network, health checks, controlled port exposure, and environment-based secret management, demonstrating how secure-by-design practices can reduce the attack surface while maintaining a functional and deployable application.
